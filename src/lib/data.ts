@@ -95,14 +95,6 @@ export const sites: Site[] = [
     demo: 'https://connects-imports-site.vercel.app',
     repo: 'https://github.com/helenomatos/connects-imports-site',
   },
-  {
-    title: 'MindBrew Light',
-    description: 'Landing page for a light-therapy café concept in Dublin.',
-    stack: ['React', 'TypeScript', 'Tailwind', 'shadcn/ui'],
-    image: '/images/projects/mindbrew.jpg',
-    demo: 'https://mind-brew-light.vercel.app',
-    repo: 'https://github.com/helenomatos/MindBrew-Light',
-  },
 ]
 
 export type SideProject = { title: string; description: string; stack: string[]; repo: string }
@@ -152,7 +144,7 @@ export const experience: Job[] = [
     points: [
       'Build client websites and web apps with React, Next.js, Vue.js and TypeScript, from planning and UX to deployment.',
       'Designed and shipped the studio’s AI WhatsApp agent: self-hosted Docker stack, n8n workflows, Google Gemini and PostgreSQL.',
-      'Shipped 6 production websites and landing pages, including bilingual (PT/EN) sites with cookie consent and lead capture.',
+      'Shipped 5 production websites and landing pages, including bilingual (PT/EN) sites with cookie consent and lead capture.',
     ],
     stack: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Node.js', 'Docker'],
   },
