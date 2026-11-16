@@ -68,7 +68,7 @@ export const sites: Site[] = [
     description: 'Website for the digital studio I co-founded, bilingual with services, plans and portfolio.',
     stack: ['React', 'TypeScript', 'Tailwind', 'shadcn/ui'],
     image: '/images/projects/webgest.jpg',
-    demo: 'https://webgest-site.vercel.app',
+    demo: 'https://webgestsolutions.com.br',
     repo: 'https://github.com/helenomatos/webgest-site',
   },
   {
