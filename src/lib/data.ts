@@ -8,7 +8,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/helenomatos/',
   github: 'https://github.com/helenomatoss',
   cv: '/cv/heleno-matos-cv.pdf',
-  siteUrl: 'https://heleno-portfolio.vercel.app',
+  siteUrl: 'https://portfolio.helenomatos.com',
 }
 
 export type FeaturedProject = {
