@@ -6,7 +6,7 @@ export const profile = {
   availability: 'Open to developer roles across Europe',
   email: 'helenovitor15@gmail.com',
   linkedin: 'https://www.linkedin.com/in/helenomatos/',
-  github: 'https://github.com/helenomatoss',
+  github: 'https://github.com/helenomatos',
   cv: '/cv/heleno-matos-cv.pdf',
   siteUrl: 'https://portfolio.helenomatos.com',
 }
@@ -41,7 +41,7 @@ export const featured: FeaturedProject[] = [
     summary:
       'A blog that writes one new technical article a day with an LLM. React front end, Express API, containerised and deployed on AWS through ECR, CodeBuild and EC2.',
     stack: ['React', 'Node.js', 'Express', 'SQLite', 'Docker', 'AWS'],
-    links: { repo: 'https://github.com/helenomatoss/assimetria-auto-blog' },
+    links: { repo: 'https://github.com/helenomatos/assimetria-auto-blog' },
   },
 ]
 
@@ -61,7 +61,7 @@ export const sites: Site[] = [
     stack: ['React', 'TypeScript', 'Tailwind', 'i18n'],
     image: '/images/projects/loyaltify.jpg',
     demo: 'https://loyaltify.vercel.app',
-    repo: 'https://github.com/helenomatoss/loyaltify',
+    repo: 'https://github.com/helenomatos/loyaltify',
   },
   {
     title: 'Webgest Solutions',
@@ -69,7 +69,7 @@ export const sites: Site[] = [
     stack: ['React', 'TypeScript', 'Tailwind', 'shadcn/ui'],
     image: '/images/projects/webgest.jpg',
     demo: 'https://webgest-site.vercel.app',
-    repo: 'https://github.com/helenomatoss/webgest-site',
+    repo: 'https://github.com/helenomatos/webgest-site',
   },
   {
     title: 'Machine Produtora',
@@ -77,7 +77,7 @@ export const sites: Site[] = [
     stack: ['React', 'TypeScript', 'Tailwind'],
     image: '/images/projects/produtora-machine.jpg',
     demo: 'https://site-produtoramachine.vercel.app',
-    repo: 'https://github.com/helenomatoss/site-produtoramachine',
+    repo: 'https://github.com/helenomatos/site-produtoramachine',
   },
   {
     title: 'Studio Bella Bronze',
@@ -85,7 +85,7 @@ export const sites: Site[] = [
     stack: ['React', 'TypeScript', 'Tailwind'],
     image: '/images/projects/bella-bronze.jpg',
     demo: 'https://site-studio-bella-bronze.vercel.app',
-    repo: 'https://github.com/helenomatoss/site-studio-bella-bronze',
+    repo: 'https://github.com/helenomatos/site-studio-bella-bronze',
   },
   {
     title: "Connect's Imports",
@@ -93,7 +93,7 @@ export const sites: Site[] = [
     stack: ['React', 'TypeScript', 'Tailwind'],
     image: '/images/projects/connects-imports.jpg',
     demo: 'https://connects-imports-site.vercel.app',
-    repo: 'https://github.com/helenomatoss/connects-imports-site',
+    repo: 'https://github.com/helenomatos/connects-imports-site',
   },
   {
     title: 'MindBrew Light',
@@ -101,7 +101,7 @@ export const sites: Site[] = [
     stack: ['React', 'TypeScript', 'Tailwind', 'shadcn/ui'],
     image: '/images/projects/mindbrew.jpg',
     demo: 'https://mind-brew-light.vercel.app',
-    repo: 'https://github.com/helenomatoss/MindBrew-Light',
+    repo: 'https://github.com/helenomatos/MindBrew-Light',
   },
 ]
 
@@ -112,25 +112,25 @@ export const sideProjects: SideProject[] = [
     title: 'Neural network playground',
     description: 'A neural network written from scratch, with no ML libraries: forward pass, backpropagation and gradient descent, with the decision boundary redrawn live while it trains.',
     stack: ['Python', 'tkinter', 'Backpropagation'],
-    repo: 'https://github.com/helenomatoss/neural-network-playground',
+    repo: 'https://github.com/helenomatos/neural-network-playground',
   },
   {
     title: 'CPU scheduling simulator',
     description: 'Compares FCFS, SRTF and Round Robin on an editable process table, with Gantt charts, waiting and turnaround times and a step-through time slider.',
     stack: ['Python', 'tkinter', 'Operating systems'],
-    repo: 'https://github.com/helenomatoss/cpu-scheduling-simulator',
+    repo: 'https://github.com/helenomatos/cpu-scheduling-simulator',
   },
   {
     title: 'Boids flocking simulator',
     description: "Craig Reynolds' Boids: separation, alignment and cohesion, with live sliders, an attractor and a predator. Delta-time movement and an OOP structure.",
     stack: ['Python', 'tkinter', 'Simulation'],
-    repo: 'https://github.com/helenomatoss/boids-flocking-simulator',
+    repo: 'https://github.com/helenomatos/boids-flocking-simulator',
   },
   {
     title: 'Fuga de Pedra Negra',
     description: 'A 2D top-down prison-escape game: daily routine clock, guards with vision cones and a suspicion system, crafting and four endings.',
     stack: ['Python', 'tkinter', 'Game dev'],
-    repo: 'https://github.com/helenomatoss/fuga-de-pedra-negra',
+    repo: 'https://github.com/helenomatos/fuga-de-pedra-negra',
   },
 ]
 

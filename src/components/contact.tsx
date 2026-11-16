@@ -54,7 +54,7 @@ export default function Contact() {
           <ul className="mt-10 space-y-3 text-sm">
             {[
               { label: 'LinkedIn', href: profile.linkedin, text: 'linkedin.com/in/helenomatos' },
-              { label: 'GitHub', href: profile.github, text: 'github.com/helenomatoss' },
+              { label: 'GitHub', href: profile.github, text: 'github.com/helenomatos' },
             ].map((l) => (
               <li key={l.label}>
                 <a href={l.href} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3">
