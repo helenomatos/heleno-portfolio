@@ -67,7 +67,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
       <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-line bg-bg">
         {project.cover ? (
-          <Image src={project.cover} alt={`Screenshot of ${project.title}`} fill priority sizes="(max-width: 768px) 100vw, 768px" className="object-cover object-top" />
+          <Image src={project.cover} alt={`Screenshot of ${project.title}`} fill priority sizes="(max-width: 768px) 100vw, 768px" className="object-contain object-center" />
         ) : (
           <>
             <div className="bg-grid absolute inset-0 opacity-60" aria-hidden />

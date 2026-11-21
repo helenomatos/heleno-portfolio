@@ -103,7 +103,7 @@ export default function Hero() {
                 ))}
                 {'}'}
                 {'\n\n'}
-                <span className="text-muted">{'// open to roles across Europe'}</span>
+                <span className="text-muted">{'// based in Dublin · open to relocation'}</span>
               </code>
             </pre>
           </div>

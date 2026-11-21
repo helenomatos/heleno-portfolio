@@ -15,7 +15,7 @@ function Cover({ p }: { p: FeaturedProject }) {
         alt={`Screenshot of ${p.title}`}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+        className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
       />
     )
   }

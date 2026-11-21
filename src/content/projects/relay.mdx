@@ -1,0 +1,54 @@
+---
+title: "Relay: reliable webhook delivery"
+date: "2026-11-16"
+summary: "A webhook delivery platform built to keep delivering when receivers fail, slow down or go offline, and when its own workers crash. Chaos-tested in CI."
+stack: ["TypeScript", "Node.js", "Fastify", "PostgreSQL", "Redis", "BullMQ", "React", "Docker", "Prometheus", "Grafana", "k6"]
+role: "Designed and built solo"
+context: "Personal project"
+cover: "/images/projects/relay-dashboard.jpg"
+links:
+  repo: "https://github.com/helenomatos/relay"
+---
+
+## The problem
+
+Webhooks look simple: something happens, you send an HTTP request to someone else's server. In production, the receiving server goes down for a minute, a worker crashes halfway through a batch, and events quietly disappear.
+
+Relay takes events from an application and delivers them to its customers' HTTP endpoints, with an **at-least-once** guarantee.
+
+## The result
+
+The consumer endpoint ran in chaos mode, returning 5xx on 20–38% of requests and going fully offline, while the worker was killed with `SIGKILL` mid-run.
+
+| Scenario | Deliveries | Delivered | Lost |
+|---|---|---|---|
+| 5,000 events, 30% failures, 15 s consumer outage | 7,497 | 7,497 | **0** |
+| 10,000 events, 20% failures, +300 ms latency, worker `kill -9` mid-flight | 15,000 | 15,000 | **0** |
+| 10,000 events, 30% failures, manual outage | 15,000 | 15,000 | **0** |
+
+Ingestion handled about **1,000 events/s with a p95 of 104 ms** (k6, 50 virtual users, 0 errors). "Delivered" is checked on both sides: the consumer verifies every signature and counts unique message ids, and the test compares the two.
+
+## How the guarantees are built
+
+- **Transactional outbox.** An event and its delivery rows are written in the same Postgres transaction, so there is no gap where an event exists but never reaches the queue.
+- **Postgres is the source of truth, Redis is the dispatcher.** The retry schedule lives in Postgres. If Redis is flushed, nothing is lost.
+- **Horizontal scaling.** The outbox relay claims rows with `FOR UPDATE SKIP LOCKED`, so several worker replicas can run at once without double-claiming.
+- **Crash recovery.** A delivery stuck past a visibility timeout goes back to the outbox. That is what makes delivery at-least-once.
+- **Exponential backoff with jitter**, so thousands of retries don't hit a recovering endpoint at the same instant.
+- **A circuit breaker per endpoint**, shared across replicas through Redis.
+- **Dead-letter queue with replay**, one at a time or in bulk.
+- **Idempotent ingestion** through an `Idempotency-Key` unique per tenant.
+- **Signed payloads** following the Standard Webhooks spec (HMAC-SHA256, timestamp tolerance, constant-time comparison).
+
+## Security
+
+- **SSRF protection:** endpoint URLs are checked against private, loopback, link-local and cloud-metadata ranges, at registration and again before every delivery.
+- API keys are stored only as SHA-256 hashes, and every query is scoped by tenant.
+
+## CI
+
+On every push, GitHub Actions runs typecheck, unit tests and build. Then it brings the whole stack up and runs the chaos test: 2,000 events, 30% failures and a 15 s outage. **The build fails if a single delivery is lost**, dead-lettered or fails signature verification.
+
+## What I'd do next
+
+Per-tenant rate limiting, secret rotation through the API, OpenTelemetry traces, and Terraform for AWS (ECS Fargate, RDS and ElastiCache). Delivery ordering is not guaranteed by design; per-endpoint FIFO would need partitioned queues.

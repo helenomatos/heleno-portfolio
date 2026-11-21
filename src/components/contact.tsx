@@ -29,8 +29,8 @@ export default function Contact() {
             Let&apos;s talk<span className="text-accent">.</span>
           </h2>
           <p className="mt-5 max-w-md text-muted">
-            I&apos;m based in Dublin and open to developer roles across Europe: on-site or hybrid in Ireland, remote or
-            relocation elsewhere. The fastest way to reach me is email.
+            I&apos;m based in Dublin and open to developer roles: on-site or hybrid in Ireland, remote, or relocation
+            elsewhere. The fastest way to reach me is email.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

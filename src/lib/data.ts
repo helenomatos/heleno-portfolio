@@ -3,7 +3,7 @@ export const profile = {
   fullName: 'Heleno Vitor Matos Leite',
   role: 'Full-Stack Developer',
   location: 'Dublin, Ireland',
-  availability: 'Open to developer roles across Europe',
+  availability: 'Based in Dublin · open to relocation',
   email: 'helenovitor15@gmail.com',
   linkedin: 'https://www.linkedin.com/in/helenomatos/',
   github: 'https://github.com/helenomatos',
@@ -23,6 +23,17 @@ export type FeaturedProject = {
 }
 
 export const featured: FeaturedProject[] = [
+  {
+    slug: 'relay',
+    title: 'Relay: reliable webhook delivery',
+    kind: 'Backend · Distributed systems',
+    year: '2026',
+    summary:
+      'A webhook delivery platform with an at-least-once guarantee. Chaos-tested with receivers failing and the worker killed mid-run: 15,000 out of 15,000 deliveries, 0 lost. CI fails the build if a single delivery goes missing.',
+    stack: ['TypeScript', 'Node.js', 'Fastify', 'PostgreSQL', 'Redis', 'BullMQ', 'Docker'],
+    cover: '/images/projects/relay-dashboard.jpg',
+    links: { repo: 'https://github.com/helenomatos/relay' },
+  },
   {
     slug: 'whatsapp-ai-agent',
     title: 'AI WhatsApp lead-qualification agent',
@@ -180,11 +191,11 @@ export const stack: { group: string; items: string[] }[] = [
   },
   {
     group: 'Back end & data',
-    items: ['Node.js', 'Express', 'REST APIs', 'PostgreSQL', 'MySQL', 'Supabase', 'SQLite'],
+    items: ['Node.js', 'Express', 'Fastify', 'REST APIs', 'PostgreSQL', 'Redis', 'BullMQ', 'MySQL', 'Supabase', 'SQLite'],
   },
   {
     group: 'Infra & AI',
-    items: ['Docker', 'AWS (EC2, ECR, CodeBuild)', 'Vercel', 'n8n', 'LLM APIs', 'Git & GitHub'],
+    items: ['Docker', 'AWS (EC2, ECR, CodeBuild)', 'GitHub Actions', 'Prometheus & Grafana', 'Vercel', 'n8n', 'LLM APIs', 'Git & GitHub'],
   },
   {
     group: 'Also',
